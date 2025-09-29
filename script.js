@@ -738,3 +738,143 @@ class DarkRedPortfolio {
         }
     }
 }
+
+// Add required CSS animations for red theme
+const redStyle = document.createElement('style');
+redStyle.textContent = `
+@keyframes redFadeOut {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.1); filter: blur(10px); }
+}
+
+@keyframes redFadeIn {
+    0% { opacity: 0; transform: scale(0.9); filter: blur(5px); }
+    100% { opacity: 1; transform: scale(1); filter: blur(0); }
+}
+
+@keyframes redRipple {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(4); opacity: 0; }
+}
+
+@keyframes redParticleFloat {
+    0% { transform: translateY(100vh) translateX(0) rotate(0deg); }
+    100% { transform: translateY(-10vh) translateX(100px) rotate(360deg); }
+}
+
+.cursor-hover .cursor-ring {
+    width: 60px !important;
+    height: 60px !important;
+    border-color: #dc2626 !important;
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.5) !important;
+}
+
+.notification {
+    background: rgba(26, 17, 17, 0.95);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    border-left: 4px solid #dc2626;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.notification.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.notification-error { 
+    border-color: #ef4444; 
+    box-shadow: 0 8px 25px rgba(239, 68, 68, 0.3); 
+}
+
+.notification-success { 
+    border-color: #10b981; 
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3); 
+}
+
+.notification-theme { 
+    border-color: #991b1b; 
+    box-shadow: 0 8px 25px rgba(153, 27, 27, 0.3); 
+}
+
+.red-audio-visualizer {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 3px;
+}
+
+.red-audio-visualizer .red-bar {
+    width: 4px;
+    height: 10px;
+    background: linear-gradient(to top, #991b1b, #dc2626, #ef4444);
+    border-radius: 2px;
+    animation: redBarPulse 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes redBarPulse {
+    0% { opacity: 0.4; transform: scaleY(0.5); }
+    100% { opacity: 1; transform: scaleY(1.2); }
+}
+
+.low-performance * {
+    animation-duration: 3s !important;
+}
+
+.page-hidden * {
+    animation-play-state: paused !important;
+}
+
+/* Hide default cursor */
+* {
+    cursor: none !important;
+}
+
+/* Custom cursor styles */
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    pointer-events: none;
+    z-index: 100001;
+    mix-blend-mode: difference;
+}
+
+.cursor-dot {
+    width: 4px;
+    height: 4px;
+    background: #dc2626;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.1s ease;
+    box-shadow: 0 0 8px rgba(220, 38, 38, 0.6);
+}
+
+.cursor-ring {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #dc2626;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.2s ease;
+    opacity: 0.7;
+}
+`;
+
+document.head.appendChild(redStyle);
