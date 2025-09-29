@@ -1,1 +1,48 @@
+:root {
+    /* Dark Red & Black Theme */
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #111111;
+    --bg-tertiary: #1a0a0a;
+    --bg-card: #1a1111;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --text-muted: #888888;
+    --text-dim: #555555;
+    --border-primary: #2a1a1a;
+    --border-secondary: #3a2222;
+    --border-hover: #4a2a2a;
+    --accent-red: #dc2626;
+    --accent-red-dark: #991b1b;
+    --accent-red-light: #ef4444;
+    --shadow-light: rgba(220, 38, 38, 0.1);
+    --shadow-dark: rgba(0, 0, 0, 0.8);
+    --discord-online: #23a55a;
+    --discord-idle: #f0b232;
+    --discord-dnd: #f23f43;
+    --discord-offline: #80848e;
+    --spotify-green: #1db954;
+    /* Gradient colors for red theme */
+    --gradient-primary: linear-gradient(135deg, #dc2626 0%, #991b1b 50%, #7f1d1d 100%);
+    --gradient-secondary: linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #991b1b 100%);
+    --gradient-accent: linear-gradient(135deg, #fca5a5 0%, #f87171 50%, #ef4444 100%);
+    /* Performance control */
+    --opacity-light: 0.1;
+    --opacity-medium: 0.2;
+    --opacity-heavy: 0.3;
+    --backdrop-blur: 25px;
+}
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none !important;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-attachment: fixed;
+    color: var(--text-primary);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
