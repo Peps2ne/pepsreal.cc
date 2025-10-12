@@ -4,17 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peps2ne - Developer & Creator</title>
-    <meta name="description" content="Peps2ne - C++ Developer, C# Developer">
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Peps2ne - C++ Developer, C# Developer, Reverse Engineering Expert. Creative problem solver and software engineer.">
+    <link rel="stylesheet" href="epc1.css">
     <script src="lanyard.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚫</text></svg>">
-    <h5>Beta Version V0.1</h5>
+    <h5>Beta Version V1.1</h5>
 </head>
-  
 <body>
-    <!-- Theme Toggle -->
+
+    
+
+    <div class="neon-orb"></div>
+    <div class="neon-orb"></div>
+    <div class="neon-orb"></div>
+
+    <div class="cursor" aria-hidden="true">
+        <div class="cursor-dot"></div>
+        <div class="cursor-ring"></div>
+    </div>
+
+    
     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
         <i class="fas fa-moon" aria-hidden="true"></i>
     </button>
@@ -27,4 +38,376 @@
             <div id="entry-description" class="sr-only">Click or press Enter to enter the main website</div>
         </div>
     </div>
-<body/>
+
+
+<div class="audio-sources" style="display: none;">
+    <audio id="track-1" loop preload="auto">
+        <source src="Fluxxwave - Lay with Me - Anti.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="track-2" loop preload="auto">
+        <source src="jordan logosu - EGE!.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="track-3" loop preload="auto">
+        <source src="Hani - Lvbel C5.mp3" type="audio/mpeg">
+    </audio>
+        <audio id="track-4" loop preload="auto">
+        <source src="Gözlerime Bak - Şam.mp3" type="audio/mpeg">
+    </audio>
+        <audio id="track-5" loop preload="auto">
+        <source src="Striker Story - MBox.mp3" type="audio/mpeg">
+    </audio>
+    </audio>
+        <audio id="track-6" loop preload="auto">
+        <source src="SHEVCHENKO - Organize.mp3" type="audio/mpeg">
+    </audio>
+    
+</div>
+
+    <button class="audio-control" id="audio-control" role="button" tabindex="0" aria-label="Toggle background music">
+        <i class="fas fa-volume-up" id="audio-icon" aria-hidden="true"></i>
+    </button>   
+
+   
+    <div class="notification-stack" id="notification-stack" aria-live="polite" aria-atomic="false"></div>
+
+    <main class="main-site" id="main-site" style="display: none;" role="main">
+        <div class="particles-container">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        
+        <div class="interactive-bg">
+            <div class="bg-element"></div>
+            <div class="bg-element"></div>
+            <div class="bg-element"></div>
+        </div>
+        
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        
+        <div class="ambient-overlay" aria-hidden="true"></div>
+        
+        <div class="main-container">
+            <aside class="widgets-section" role="complementary" aria-label="Status widgets">
+                <section class="widget discord-widget" aria-labelledby="discord-title">
+                    <div class="widget-header">
+                        <div class="widget-icon" aria-hidden="true">
+                            <i class="fab fa-discord"></i>
+                        </div>
+                        <span class="widget-title" id="discord-title">Discord</span>
+                        <div class="status-indicator" id="discord-status-dot" aria-label="Discord status"></div>
+                    </div>
+                    <div class="widget-content">
+                        <div class="discord-profile">
+                            <div class="avatar-container">
+                                <img id="discord-avatar" src="" alt="Discord Avatar" class="avatar">
+                                <div class="status-badge" id="discord-status" aria-label="Discord status badge"></div>
+                            </div>
+                            <div class="profile-info">
+                                <span class="username" id="discord-username">Loading...</span>
+                                <div class="activity" id="discord-activity">
+                                    <span class="activity-text">Offline</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="widget spotify-widget" aria-labelledby="spotify-title">
+                    <div class="widget-header">
+                        <div class="widget-icon" aria-hidden="true">
+                            <i class="fab fa-spotify"></i>
+                        </div>
+                        <span class="widget-title" id="spotify-title">Spotify</span>
+                        <div class="playback-status">
+                            <div class="play-indicator" id="spotify-playing" aria-label="Spotify playback status"></div>
+                        </div>
+                    </div>
+                    <div class="widget-content">
+                        <div class="spotify-info">
+                            <div class="track-details">
+                                <span class="track-name" id="spotify-track">Not playing</span>
+                                <span class="artist-name" id="spotify-artist">-</span>
+                            </div>
+                            <div class="album-container">
+                                <img id="spotify-album" src="" alt="Album Art" class="album-art">
+                            </div>
+                        </div>
+                        <div class="progress-container" id="spotify-progress-container" aria-label="Track progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="spotify-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="time-info">
+                                <span class="current-time" id="current-time">0:00</span>
+                                <span class="total-time" id="total-time">0:00</span>
+                            </div>
+                        </div>
+
+                        
+<div class="music-controls-section">
+    <div class="music-player-card">
+        <div class="music-header">
+            <div class="music-icon">
+                <i class="fas fa-music"></i>
+            </div>
+            <span class="music-title">Music Player</span>
+            <div class="track-counter">
+                <span id="current-track-number">1</span>/<span id="total-tracks">3</span>
+            </div>
+            <div class="volume-indicator" id="volume-indicator">
+                <i class="fas fa-volume-up"></i>
+            </div>
+        </div>
+        
+        <div class="music-info">
+            <div class="track-details">
+                <span class="track-title" id="track-title">Fluxxwave - Lay with Me</span>
+                <span class="track-artist" id="track-artist">Anti</span>
+            </div>
+        </div>
+        
+        <div class="music-progress">
+            <div class="progress-bar">
+                <div class="progress-fill" id="music-progress"></div>
+            </div>
+            <div class="time-display">
+                <span class="current-time" id="music-current-time">0:00</span>
+                <span class="total-time" id="music-total-time">0:00</span>
+            </div>
+        </div>
+        
+        <div class="music-controls">
+            <button class="control-btn" id="prev-btn" aria-label="Previous track">
+                <i class="fas fa-step-backward"></i>
+            </button>
+            <button class="control-btn play-pause-btn" id="play-pause-btn" aria-label="Play/Pause">
+                <i class="fas fa-play" id="play-pause-icon"></i>
+            </button>
+            <button class="control-btn" id="next-btn" aria-label="Next track">
+                <i class="fas fa-step-forward"></i>
+            </button>
+            <button class="control-btn" id="volume-btn" aria-label="Toggle volume">
+                <i class="fas fa-volume-up" id="volume-icon"></i>
+            </button>
+            <button class="control-btn" id="shuffle-btn" aria-label="Shuffle tracks">
+                <i class="fas fa-random"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+                    </div>
+                </section>
+
+                
+                <section class="widget stats-widget" aria-labelledby="stats-title">
+                    <div class="widget-header">
+                        <div class="widget-icon" aria-hidden="true">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <span class="widget-title" id="stats-title">Stats</span>
+                    </div>
+                <div class="stats-grid" role="list" aria-label="Statistics"></div>
+                    <div class="stat-item" role="listitem">
+                        <div class="stat-number" id="profile-views" data-value="0" aria-label="Profile views">
+                            <span class="counter-number">0</span>
+                    </div>
+
+                    <div class="stat-label">Profile Views</div>
+                            <div class="stat-trend">
+                            <i class="fas fa-arrow-up trend-icon"></i>
+                            <span class="trend-text">+1 today</span>
+                    </div>
+
+                 </div>
+                    <div class="widget-content">
+                        <div class="stats-grid" role="list" aria-label="Statistics">
+                            <div class="stat-item" role="listitem">
+                                <div class="stat-number" data-value="2" aria-label="2 projects">0</div>
+                                <div class="stat-label">Projects</div>
+                            </div>
+                            <div class="stat-item" role="listitem">
+                                <div class="stat-number" data-value="4" aria-label="4 years">0</div>
+                                <div class="stat-label">Years</div>
+                            </div>
+                            <div class="stat-item" role="listitem">
+                                <div class="stat-number" data-value="2499" aria-label="2499 problems">0</div>
+                                <div class="stat-label">Problems</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </aside>
+            
+            <section class="profile-section" role="region" aria-label="Profile information">
+                <article class="profile-card">
+
+                    <header class="profile-header">
+                        <div class="profile-avatar">
+                            <div class="avatar-container-with-decoration">
+                                <img id="avatar-decoration-img" 
+                                    class="discord-avatar-decoration" 
+                                    src="https://cdn.discordapp.com/avatar-decoration-presets/a_d1e5d3aabccb3d38f21b5ac8a33fcf4d.png" 
+                                    alt="Avatar Decoration">
+                            </div>
+
+                            <img id="main-avatar" src="" alt="peps's profile picture" class="main-avatar-img">
+
+                            <div class="status-badge" id="main-status-badge"></div>
+                        </div>
+                        
+                        <div class="profile-details">
+                            <h1 class="display-name">
+                                    <span class="name-text" id="typewriter-name"></span>
+                                    <span class="typewriter-cursor">|</span>
+                            </h1>
+                            
+                            <div class="bio-section">
+                                <p class="bio-text">
+                                    <span class="typing-text" aria-live="polite"></span>
+                                </p>
+                            </div>
+                            
+                            <div class="status-info">
+                                <div class="status-dot" id="main-status-dot" aria-label="Current status"></div>
+                                <span class="status-text" id="main-status-text">Available for projects</span>
+                            </div>
+                        </div>
+                    </header>
+
+                    
+                    <div class="divider" aria-hidden="true"></div>
+
+                    
+                    <section class="skills-section" aria-labelledby="skills-title">
+                        <h3 class="skills-title" id="skills-title">Skills & Technologies</h3>
+                        <div class="skills-grid" role="list" aria-label="Skills and technologies">
+                            <span class="skill-tag" role="listitem" tabindex="0">C++</span>
+                            <span class="skill-tag" role="listitem" tabindex="0">C#</span>
+                            <span class="skill-tag" role="listitem" tabindex="0">Python</span>
+                            <span class="skill-tag" role="listitem" tabindex="0">Backend </span>
+                            <span class="skill-tag" role="listitem" tabindex="0">Software Engineering</span>
+                            <span class="skill-tag" role="listitem" tabindex="0">Git</span>
+                            <span class="skill-tag" role="listitem" tabindex="0">Discord.API</span>
+                        </div>
+                    </section>
+
+                    <div class="divider" aria-hidden="true"></div>
+                    
+                    
+                    <section class="projects-section" aria-labelledby="projects-title">
+                        <h3 class="projects-title" id="projects-title">Featured Projects</h3>
+                        <div class="projects-grid" role="list" aria-label="Featured projects">
+                            <article class="project-card" role="listitem" tabindex="0">
+                                <h4 class="project-title">Discord Reseller Bot</h4>
+                                <p class="project-description">The bot is designed to easily transfer the products you sell to resellers and reduce waiting times.</p>
+                                <div class="project-tech" role="list" aria-label="Technologies used">
+                                    <span class="project-tech-tag" role="listitem">Python</span>
+                                    <span class="project-tech-tag" role="listitem">Discord.py</span>
+                                    <span class="project-tech-tag" role="listitem">SQLite</span>
+                                </div>
+                            </article>
+                            <article class="project-card" role="listitem" tabindex="0">
+                                <h4 class="project-title">???</h4>
+                                <p class="project-description">???</p>
+                                <div class="project-tech" role="list" aria-label="Technologies used">
+                                    <span class="project-tech-tag" role="listitem">???</span>
+                                    <span class="project-tech-tag" role="listitem">???</span>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+
+                    <div class="divider" aria-hidden="true"></div>
+                    
+                    <nav class="social-links" aria-label="Social media and contact links">
+                        <div class="links-grid">
+                            <a href="#" class="social-link" data-link="https://discord.gg/x2yRQ9kB" data-platform="Discord" tabindex="0" role="button" aria-label="Copy Discord username">
+                                <div class="link-icon" aria-hidden="true">
+                                    <i class="fab fa-discord"></i>
+                                </div>
+                                <span class="link-label">Discord</span>
+                                <div class="link-arrow" aria-hidden="true">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </a>
+                            
+                            <a href="#" class="social-link" data-link="https://github.com/peps2ne" data-platform="GitHub" tabindex="0" role="button" aria-label="Copy GitHub profile link">
+                                <div class="link-icon" aria-hidden="true">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <span class="link-label">GitHub</span>
+                                <div class="link-arrow" aria-hidden="true">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </a>
+                            
+                            <a href="#" class="social-link" data-link="https://open.spotify.com/intl-tr/artist/3bnRxwldhAOdAej7t8wAoO?si=d6a7756af4e54f72" data-platform="Spotify" tabindex="0" role="button" aria-label="Copy Spotify profile link">
+                                <div class="link-icon" aria-hidden="true">
+                                    <i class="fab fa-spotify"></i>
+                                </div>
+                                <span class="link-label">Spotify</span>
+                                <div class="link-arrow" aria-hidden="true">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </a>
+
+                            <a href="#" class="social-link" data-link="https://www.instagram.com/peps2ne/" data-platform="Instagram" tabindex="0" role="button" aria-label="Copy Instagram profile link">
+                                <div class="link-icon" aria-hidden="true">
+                                    <i class="fab fa-instagram"></i>
+                                </div>
+                                <span class="link-label">Instagram</span>
+                                <div class="link-arrow" aria-hidden="true">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </a>
+                            
+                            <a href="#" class="social-link" data-link="" data-platform="Contact Me: operations@pepsreal.cc" tabindex="0" role="button" aria-label="Copy contact information">
+                                <div class="link-icon" aria-hidden="true">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <span class="link-label">Contact</span>
+                                <div class="link-arrow" aria-hidden="true">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </nav>
+                    
+                    <footer class="footer">
+                        <div class="footer-content">
+                            <div class="copyright">
+                                <i class="fas fa-code" aria-hidden="true"></i>
+                                <span>© 2025 - C++ / C# Developer</span>
+                            </div>
+                            <div class="last-seen">
+                                <i class="fas fa-clock" aria-hidden="true"></i>
+                                <span id="last-seen">Last seen: calculating...</span>
+                            </div>
+                        </div>
+                    </footer>
+                </article>
+            </section>
+        </div>
+    </main>
+    
+    
+    <div class="sr-only" aria-live="polite" aria-atomic="true">
+        <div id="status-announcements"></div>+
+    </div>
+    
+    <script src="epv2.js"></script>
+    <script src="performance-monitor.js"></script>
+
+    <div id="Unl Store">
+        <a href="mailto:operations@pepsreal.cc" target="_blank" title="Peps Star" rel="noopener">Peps Star</a> tarafından hazırlanmıştır. © 2025 - Tüm Hakları Saklıdır.
+    </div>
+
+</body>
+</html>
+
